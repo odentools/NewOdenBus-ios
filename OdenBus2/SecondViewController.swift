@@ -13,6 +13,7 @@ class SecondViewController: UIViewController {
     var jikoku:String = ""
     var alert:UIAlertController!
     
+    
     var dateFormatter: DateFormatter{
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy/MM/dd HH:mm:ss"
@@ -49,6 +50,8 @@ class SecondViewController: UIViewController {
         Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(SecondViewController.updateDateLabel), userInfo: nil, repeats: true)
         
         BusJikoku.text = jikoku
+        
+        
 
         
     }

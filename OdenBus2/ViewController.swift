@@ -43,7 +43,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         animateImage(target: imageview)
         animateImage(target: imageview2)
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
     override func didReceiveMemoryWarning() {
@@ -55,7 +54,7 @@ class ViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "goJikoku") {
             let jvc: SecondViewController = (segue.destination as? SecondViewController)!
-            
+            //ここにバスによって違う時刻の配列を渡す
             if ukewatasu == result1() {
                 ukewatasu = result1()
                 jvc.jikoku = ukewatasu
