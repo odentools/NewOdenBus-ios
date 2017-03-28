@@ -11,7 +11,13 @@ import UIKit
 class SecondViewController: UIViewController {
 
     var jikoku:String = ""
+    //tableview用の空の配列を定義
+    var jikokuArray:[String] = []
+    //番号によって変わるため番号も受け取る
+    var number:Int = Int()
+    
     var alert:UIAlertController!
+    
     
     
     var dateFormatter: DateFormatter{
@@ -75,6 +81,34 @@ class SecondViewController: UIViewController {
     @IBAction func NamiHayaTel(_ sender: Any) {
        // UIApplication.shared.openURL(NSURL(string: "tel://0728790304")! as URL)
         self.present(alert, animated: true, completion:nil)
+
+    }
+    
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "zenjikoku") {
+            let jvc: TableViewController = (segue.destination as? TableViewController)!
+            //ここにバスによって違う時刻の配列を渡す
+            if 0 == number {
+                jvc.Allarray = jikokuArray
+            } else if 1 == number {
+                jvc.Allarray = jikokuArray
+            } else if 2 == number {
+                jvc.Allarray = jikokuArray
+            } else if 3 == number {
+                jvc.Allarray = jikokuArray
+            } else if 4 == number {
+                jvc.Allarray = jikokuArray
+            } else if 5 == number {
+                jvc.Allarray = jikokuArray
+            }  else if 6 == number {
+                jvc.Allarray = jikokuArray
+            }
+            //jvc.jikoku = ukewatasu //jikokuViewcontrollerの中のstring変数に渡す
+        }
+    }
+ 
+ 
+    @IBAction func zenJikoku(_ sender: UIButton) {
 
     }
     

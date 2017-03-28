@@ -35,14 +35,20 @@ class ViewController: UIViewController {
         animateImage(target: imageview)
         animateImage(target: imageview2)
     }
+    
+    @IBAction func back5(segue:UIStoryboardSegue){//戻るボタン用
+    }
 
     var ukewatasu:String = ""
     
+    //全時刻表を渡すための空配列
+    var jikokuUkewatasu:[String] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         animateImage(target: imageview)
         animateImage(target: imageview2)
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -58,18 +64,28 @@ class ViewController: UIViewController {
             if ukewatasu == result1() {
                 ukewatasu = result1()
                 jvc.jikoku = ukewatasu
+                jvc.jikokuArray = jikokuUkewatasu
+                jvc.number = 0
             } else if ukewatasu == result2() {
                 ukewatasu = result2()
                 jvc.jikoku = ukewatasu
+                jvc.jikokuArray = jikokuUkewatasu
+                jvc.number = 1
             } else if ukewatasu == result3() {
                 ukewatasu = result3()
                 jvc.jikoku = ukewatasu
+                jvc.jikokuArray = jikokuUkewatasu
+                jvc.number = 2
             } else if ukewatasu == result4() {
                 ukewatasu = result4()
                 jvc.jikoku = ukewatasu
+                jvc.jikokuArray = jikokuUkewatasu
+                jvc.number = 4
             } else if ukewatasu == result5() {
                 ukewatasu = result5()
                 jvc.jikoku = ukewatasu
+                jvc.jikokuArray = jikokuUkewatasu
+                jvc.number = 5
             } else if ukewatasu == result6() {
                 ukewatasu = result6()
                 jvc.jikoku = ukewatasu
@@ -80,10 +96,16 @@ class ViewController: UIViewController {
 
     @IBAction func SbSIjyou(_ sender: Any) {
         ukewatasu = result1()
+        //全時刻Table用
+        jikokuUkewatasu = ["AM:9:10:00","AM:9:50:00","AM:10:10:00","AM:10:50:00","AM:11:10:00","AM:11:30:00","AM:11:50:00","PM:12:10:00","PM:12:50:00","PM:13:10:00","PM:14:10:00","PM:15:10:00","PM:15:20:00","PM:15:50:00","PM:16:05:00","PM:16:42:00","PM:16:50:00","PM:16:55:00","PM:17:00:00","PM:17:05:00","PM:17:50:00","PM:18:05:00","PM:18:35:00","PM:18:50:00","PM:19:05:00","PM:19:35:00","PM:19:50:00","PM:20:05:00","PM:20:35:00","PM:21:05:00"]
+    
     }
 
     @IBAction func SbNeyagawa(_ sender: Any) {
+        
         ukewatasu = result2()
+        //全時刻のTable用
+        jikokuUkewatasu = ["AM:8:30:00","AM:8:40:00","AM:9:00:00","AM:9:05:00","AM:9:40:00","AM:10:20:00","AM:10:40:00","AM:11:20:00","AM:11:40:00","AM:12:20:00","AM:12:40:00","AM:13:00:00","AM:13:20:00","AM:13:40:00","AM:14:20:00","AM:14:40:00","AM:15:20:00","AM:15:40:00","AM:16:20:00","AM:16:40:00","AM:17:20:00","AM:17:40:00","AM:18:20:00","AM:18:40:00","AM:19:05:00","AM:19:40:00","AM:20:05:00","AM:20:40:00"]
     }
     
     @IBAction func KintetuDentu(_ sender: Any) {

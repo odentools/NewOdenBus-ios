@@ -32,6 +32,9 @@
 		50BD0DAE1E422E5700BC7527 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BD0DAD1E422E5700BC7527 /* ThirdViewController.swift */; };
 		50BD0DB01E42336200BC7527 /* FourthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BD0DAF1E42336200BC7527 /* FourthViewController.swift */; };
 		50EE89261E56FAEB00546EDA /* taxi1.png in Resources */ = {isa = PBXBuildFile; fileRef = 50EE89251E56FAEB00546EDA /* taxi1.png */; };
+		50EFCFF21E89337300045791 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EFCFF11E89337300045791 /* TableViewController.swift */; };
+		50EFCFF41E8A6D2C00045791 /* CustomClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EFCFF31E8A6D2B00045791 /* CustomClass.swift */; };
+		50EFCFF61E8A8DDC00045791 /* ??????????? 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 50EFCFF51E8A8DDC00045791 /* ??????????? 3.jpg */; };
 		FE5295BD766E72E0BC2C0DB0 /* Pods_OdenBus2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEE4B23731A103986F40E536 /* Pods_OdenBus2.framework */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +67,9 @@
 		50BD0DAF1E42336200BC7527 /* FourthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FourthViewController.swift; sourceTree = "<group>"; };
 		50E640411E5369F500476E68 /* OdenBus2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OdenBus2.entitlements; sourceTree = "<group>"; };
 		50EE89251E56FAEB00546EDA /* taxi1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = taxi1.png; sourceTree = "<group>"; };
+		50EFCFF11E89337300045791 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		50EFCFF31E8A6D2B00045791 /* CustomClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomClass.swift; sourceTree = "<group>"; };
+		50EFCFF51E8A8DDC00045791 /* ??????????? 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "??????????? 3.jpg"; sourceTree = "<group>"; };
 		BEE4B23731A103986F40E536 /* Pods_OdenBus2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OdenBus2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C61FD2E492958FA4796A8E29 /* Pods-OdenBus2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OdenBus2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OdenBus2/Pods-OdenBus2.debug.xcconfig"; sourceTree = "<group>"; };
 		EBFD6AC96F93C2F76B0F830F /* Pods-OdenBus2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OdenBus2.release.xcconfig"; path = "Pods/Target Support Files/Pods-OdenBus2/Pods-OdenBus2.release.xcconfig"; sourceTree = "<group>"; };
@@ -107,6 +113,7 @@
 				503CBBFF1E5317C3004A0F4F /* camera.png */,
 				503CBC001E5317C3004A0F4F /* cc.gif */,
 				503CBC011E5317C3004A0F4F /* five.png */,
+				50EFCFF51E8A8DDC00045791 /* ??????????? 3.jpg */,
 				503CBC021E5317C3004A0F4F /* four.png */,
 				503CBC031E5317C3004A0F4F /* library.png */,
 				503CBC041E5317C3004A0F4F /* one.png */,
@@ -120,11 +127,13 @@
 				5063D6BE1E4B837800228318 /* Digital.otf */,
 				5063D6BC1E4B7F4A00228318 /* zekton_free.ttf */,
 				5097315E1E3F094F005795BF /* Main.storyboard */,
+				50EFCFF31E8A6D2B00045791 /* CustomClass.swift */,
 				5097315A1E3F094F005795BF /* AppDelegate.swift */,
 				5097315C1E3F094F005795BF /* ViewController.swift */,
 				5097316C1E3F0F58005795BF /* SecondViewController.swift */,
 				50BD0DAD1E422E5700BC7527 /* ThirdViewController.swift */,
 				50BD0DAF1E42336200BC7527 /* FourthViewController.swift */,
+				50EFCFF11E89337300045791 /* TableViewController.swift */,
 				509731611E3F094F005795BF /* Assets.xcassets */,
 				509731631E3F094F005795BF /* LaunchScreen.storyboard */,
 				5028328C1E5401220027D7B1 /* GoogleService-Info.plist */,
@@ -223,6 +232,7 @@
 				503CBC0D1E5317C3004A0F4F /* five.png in Resources */,
 				50EE89261E56FAEB00546EDA /* taxi1.png in Resources */,
 				503CBC0A1E5317C3004A0F4F /* backImage.jpg in Resources */,
+				50EFCFF61E8A8DDC00045791 /* ??????????? 3.jpg in Resources */,
 				503CBC121E5317C3004A0F4F /* seven.png in Resources */,
 				509731651E3F094F005795BF /* LaunchScreen.storyboard in Resources */,
 				503CBC151E5317C3004A0F4F /* two.png in Resources */,
@@ -297,10 +307,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				5097316D1E3F0F58005795BF /* SecondViewController.swift in Sources */,
+				50EFCFF21E89337300045791 /* TableViewController.swift in Sources */,
 				5097315D1E3F094F005795BF /* ViewController.swift in Sources */,
 				50BD0DAE1E422E5700BC7527 /* ThirdViewController.swift in Sources */,
 				5097315B1E3F094F005795BF /* AppDelegate.swift in Sources */,
 				50BD0DB01E42336200BC7527 /* FourthViewController.swift in Sources */,
+				50EFCFF41E8A6D2C00045791 /* CustomClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

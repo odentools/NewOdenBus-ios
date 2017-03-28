@@ -2,45 +2,54 @@
 //  TableViewController.swift
 //  OdenBus2
 //
-//  Created by 奥村晋太郎 on 2017/03/26.
+//  Created by 奥村晋太郎 on 2017/03/27.
 //  Copyright © 2017年 mycompany. All rights reserved.
 //
 
 import UIKit
 
-class TableViewController: UITableViewController {
+class TableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    //受け取る用の空配列
+    var Allarray:[String] = []
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
     
-    // MARK: - Table view data source
     
-     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Potentially incomplete method implementation.
-        // Return the number of sections.
-        return 0
-    }
-    
-     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete method implementation.
-        // Return the number of rows in the section.
-        return 0
-    }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-    }
-    
+     //セルの個数を指定する
+     func tableView( _ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+     return Allarray.count
+     }
+     
+     // セルに値を設定するデータソースメソッド（必須）
+     //
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+     
+     // セルを取得する
+     let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "MyCell", for: indexPath as IndexPath)
+     
+     // セルに表示する値を設定する
+     cell.textLabel!.text = Allarray[indexPath.row]
+     //セルの背景色を変更
+     //cell.contentView.backgroundColor = UIColor.lightGray
+       
+     return cell
+     }
+     
+     /// セルが選択された時に呼ばれるデリゲートメソッド
+     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+     print("セル番号：(indexPath.row) セルの内容：(fruits[indexPath.row])")
+     }
 
-    @IBAction func close(_ sender: AnyObject) {
-         self.navigationController?.dismiss(animated: true, completion: nil)
     
-    }
-
 
 }

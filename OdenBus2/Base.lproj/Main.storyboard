@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -17,95 +18,73 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Setting View Controller-->
-        <scene sceneID="3vi-bS-Mak">
+        <!--このバスの時刻表-->
+        <scene sceneID="che-6o-zwy">
             <objects>
-                <viewController id="vW4-ez-86u" customClass="SettingViewController" customModule="OdenBus2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="lOc-59-LPd" customClass="TableViewController" customModule="OdenBus2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="hcS-vY-Pgz"/>
-                        <viewControllerLayoutGuide type="bottom" id="8zl-zQ-cPN"/>
+                        <viewControllerLayoutGuide type="top" id="c6b-TG-tB0"/>
+                        <viewControllerLayoutGuide type="bottom" id="W44-Tu-xHi"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="GV0-jM-GXT">
+                    <view key="view" contentMode="scaleToFill" id="g86-lI-9wm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="backImage.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Hdt-WU-UI6">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </imageView>
-                            <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eSB-8p-ol9">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" id="G9f-9s-F6P">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                    <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ply-bM-9wT">
-                                            <rect key="frame" x="0.0" y="80" width="113" height="100"/>
-                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ky0-IB-PZw">
-                                            <rect key="frame" x="138" y="80" width="237" height="100"/>
-                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="チャットの背景画像を変更する" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vll-EP-yNj">
-                                            <rect key="frame" x="0.0" y="270" width="375" height="74"/>
-                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v6L-Ld-aIm">
-                                            <rect key="frame" x="214" y="508" width="161" height="159"/>
-                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" image="camera.png"/>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7tW-an-oPV">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="このバスの全時刻表" id="1Vs-Wk-awX">
+                                        <barButtonItem key="leftBarButtonItem" title="戻る" id="n7t-hN-CPp">
                                             <connections>
-                                                <action selector="camera:" destination="vW4-ez-86u" eventType="touchUpInside" id="8CF-Ss-WRS"/>
+                                                <segue destination="HEk-Yw-6vg" kind="unwind" unwindAction="back5WithSegue:" id="Bt5-a2-uif"/>
                                             </connections>
-                                        </button>
-                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ABi-Hm-ccX">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="55"/>
-                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LBN-pX-KkP">
-                                                    <rect key="frame" x="0.0" y="0.0" width="94" height="55"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="戻る">
-                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                    <connections>
-                                                        <action selector="back5:" destination="vW4-ez-86u" eventType="touchUpInside" id="LgV-MH-Fdj"/>
-                                                    </connections>
-                                                </button>
-                                            </subviews>
-                                            <color key="backgroundColor" red="0.099102623760700226" green="0.29385390877723694" blue="0.28612929582595825" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </view>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p29-Dr-4Kr">
-                                            <rect key="frame" x="0.0" y="508" width="161" height="159"/>
-                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" image="library.png"/>
-                                            <connections>
-                                                <action selector="openAlbum:" destination="vW4-ez-86u" eventType="touchUpInside" id="Yce-Kk-JzB"/>
-                                            </connections>
-                                        </button>
-                                    </subviews>
-                                </view>
-                                <blurEffect style="dark"/>
-                            </visualEffectView>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="51" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2wL-Uq-YP9">
+                                <rect key="frame" x="0.0" y="72" width="375" height="639"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="639" id="3wO-7c-Htj"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyCell" rowHeight="51" id="Svv-UR-3LF">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="51"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Svv-UR-3LF" id="Z98-E3-7zo">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.41647493749999998" green="1" blue="0.96937505189999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="lOc-59-LPd" id="EoO-bc-oSf"/>
+                                    <outlet property="delegate" destination="lOc-59-LPd" id="Pbf-CN-8EN"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="2wL-Uq-YP9" secondAttribute="trailing" id="0lj-xM-TnE"/>
+                            <constraint firstItem="2wL-Uq-YP9" firstAttribute="leading" secondItem="g86-lI-9wm" secondAttribute="leading" id="LOk-Cw-tVz"/>
+                            <constraint firstItem="2wL-Uq-YP9" firstAttribute="top" secondItem="7tW-an-oPV" secondAttribute="bottom" id="fWI-Mi-R1w"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="2wL-Uq-YP9" secondAttribute="bottom" constant="-44" id="jSd-hW-w6r"/>
+                            <constraint firstItem="2wL-Uq-YP9" firstAttribute="trailing" secondItem="7tW-an-oPV" secondAttribute="trailing" id="ngR-gc-WZO"/>
+                            <constraint firstItem="2wL-Uq-YP9" firstAttribute="leading" secondItem="7tW-an-oPV" secondAttribute="leading" id="suD-Jw-9IH"/>
+                        </constraints>
                     </view>
-                    <connections>
-                        <outlet property="profileImageView" destination="ply-bM-9wT" id="tYe-A8-hDc"/>
-                        <outlet property="profileNameLabel" destination="ky0-IB-PZw" id="2CJ-vV-ccn"/>
-                    </connections>
+                    <navigationItem key="navigationItem" title="このバスの時刻表" id="tW3-aQ-gF5">
+                        <barButtonItem key="backBarButtonItem" id="RIP-X0-gtU">
+                            <color key="tintColor" red="0.41647493749999998" green="1" blue="0.96937505189999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Adz-18-qcp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8P7-eV-2HL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="HEk-Yw-6vg" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2917.5999999999999" y="158.77061469265368"/>
+            <point key="canvasLocation" x="2381.5999999999999" y="220.83958020989508"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -119,40 +98,50 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ywc-mH-p4m">
-                                <rect key="frame" x="-1" y="268" width="375" height="27"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ywc-mH-p4m" customClass="CustomClass" customModule="OdenBus2" customModuleProvider="target">
+                                <rect key="frame" x="69" y="266" width="234" height="32"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="18"/>
                                 <state key="normal" title="近鉄バス 四條畷電通大行き">
                                     <color key="titleColor" red="0.41647493749999998" green="1" blue="0.96937505189999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" cocoaTouchSystemColor="lightTextColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="KintetuDentu:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aFW-lD-xmU"/>
                                     <segue destination="RLX-B3-mNg" kind="show" identifier="goJikoku" id="ttL-en-nTN"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sQb-LI-HJv">
-                                <rect key="frame" x="4" y="397" width="367" height="31"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sQb-LI-HJv" customClass="CustomClass" customModule="OdenBus2" customModuleProvider="target">
+                                <rect key="frame" x="70" y="395" width="234" height="32"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="18"/>
                                 <state key="normal" title="近鉄バス 清滝団地行き ">
                                     <color key="titleColor" red="0.41647493749999998" green="1" blue="0.96937505189999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" cocoaTouchSystemColor="lightTextColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="KintetuKiyotaki:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hQD-ol-a85"/>
                                     <segue destination="RLX-B3-mNg" kind="show" identifier="goJikoku" id="SGv-bs-UhQ"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZWR-rG-n6G">
-                                <rect key="frame" x="-1" y="462" width="375" height="32"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="18"/>
-                                <state key="normal" title="近鉄バス 清滝団地発">
-                                    <color key="titleColor" red="0.41647493749999998" green="1" blue="0.96937505189999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="KintetuKiyotakiHatu:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LzA-G9-sLZ"/>
-                                    <segue destination="RLX-B3-mNg" kind="show" identifier="goJikoku" id="e1s-BT-QQt"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="大阪電気通信大学バス時刻表" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cb3-UP-bKp">
@@ -180,41 +169,57 @@
                                     <segue destination="s0C-Vb-YxQ" kind="show" id="MQ0-jB-TEJ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fM2-kd-81x">
-                                <rect key="frame" x="-1" y="328" width="375" height="33"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fM2-kd-81x" customClass="CustomClass" customModule="OdenBus2" customModuleProvider="target">
+                                <rect key="frame" x="69" y="326" width="234" height="32"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="18"/>
                                 <state key="normal" title="近鉄バス 四條畷行き">
                                     <color key="titleColor" red="0.41647493749999998" green="1" blue="0.96937505189999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" cocoaTouchSystemColor="lightTextColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="KintetuSijyou:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Za4-pY-BEO"/>
                                     <segue destination="RLX-B3-mNg" kind="show" identifier="goJikoku" id="B8a-eV-CCa"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Wd-Ce-1XP">
-                                <rect key="frame" x="8" y="139" width="359" height="32"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="18"/>
-                                <state key="normal" title="スクールバス 四條畷行き">
-                                    <color key="titleColor" red="0.41647493749999998" green="1" blue="0.96937505189999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="SbSIjyou:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fUd-oO-lh9"/>
-                                    <segue destination="RLX-B3-mNg" kind="show" identifier="goJikoku" id="naG-ll-PMb"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_school005" translatesAutoresizingMaskIntoConstraints="NO" id="R1O-ot-CSG">
                                 <rect key="frame" x="0.0" y="565" width="85" height="82"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4rs-g4-MLe">
-                                <rect key="frame" x="-4" y="199" width="375" height="38"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4rs-g4-MLe" customClass="CustomClass" customModule="OdenBus2" customModuleProvider="target">
+                                <rect key="frame" x="70" y="202" width="234" height="32"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="18"/>
-                                <state key="normal" title="スクールバス 寝屋川行き">
-                                    <color key="titleColor" red="0.41647493749999998" green="1" blue="0.96937505189999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="スクールバス 寝屋川行き">
+                                            <attributes>
+                                                <color key="NSColor" red="0.41647493749999998" green="1" blue="0.96937505189999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <font key="NSFont" size="18" name="AmericanTypewriter-Bold"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" cocoaTouchSystemColor="lightTextColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="SbNeyagawa:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cmi-3Z-wSe"/>
                                     <segue destination="RLX-B3-mNg" kind="show" identifier="goJikoku" id="GYA-CW-HhV"/>
@@ -224,6 +229,52 @@
                                 <rect key="frame" x="-4" y="74" width="85" height="82"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Wd-Ce-1XP" customClass="CustomClass" customModule="OdenBus2" customModuleProvider="target">
+                                <rect key="frame" x="69" y="140" width="234" height="32"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="18"/>
+                                <state key="normal" title="スクールバス 四條畷行き">
+                                    <color key="titleColor" red="0.57018765847363173" green="0.98736178874969482" blue="0.9616008468199353" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" cocoaTouchSystemColor="lightTextColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="SbSIjyou:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fUd-oO-lh9"/>
+                                    <segue destination="RLX-B3-mNg" kind="show" identifier="goJikoku" id="naG-ll-PMb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZWR-rG-n6G" customClass="CustomClass" customModule="OdenBus2" customModuleProvider="target">
+                                <rect key="frame" x="69" y="458" width="234" height="32"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="18"/>
+                                <state key="normal" title="近鉄バス 清滝団地発">
+                                    <color key="titleColor" red="0.41647493749999998" green="1" blue="0.96937505189999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" cocoaTouchSystemColor="lightTextColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="KintetuKiyotakiHatu:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LzA-G9-sLZ"/>
+                                    <segue destination="RLX-B3-mNg" kind="show" identifier="goJikoku" id="e1s-BT-QQt"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.13624802231788635" green="0.33457756042480469" blue="0.40814453363418579" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -297,6 +348,18 @@
                                 </state>
                                 <connections>
                                     <segue destination="naf-lr-AUm" kind="unwind" unwindAction="backWithSegue:" id="MjW-Le-9zl"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k8p-Hl-4od">
+                                <rect key="frame" x="205" y="379" width="153" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="このバスの全時刻表へ">
+                                    <color key="titleColor" red="0.41647493749999998" green="1" blue="0.96937505189999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="zenJikoku:" destination="RLX-B3-mNg" eventType="touchUpInside" id="cvz-Zu-5NX"/>
+                                    <segue destination="lOc-59-LPd" kind="show" identifier="zenjikoku" id="C8R-b9-4V1"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -520,13 +583,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="backImage.jpg" width="1440" height="2560"/>
-        <image name="camera.png" width="128" height="128"/>
         <image name="icon_school005" width="200" height="200"/>
-        <image name="library.png" width="128" height="128"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="1WA-jX-8aG"/>
+        <segue reference="B8a-eV-CCa"/>
         <segue reference="w4M-C0-H2t"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
