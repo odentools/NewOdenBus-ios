@@ -125,7 +125,6 @@ class ViewController: UIViewController {
     }
     
     
-    
     //スクールバス四条畷
     func result1() -> String {
         
