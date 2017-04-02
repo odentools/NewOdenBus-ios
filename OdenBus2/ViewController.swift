@@ -7,8 +7,15 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, GADBannerViewDelegate {
+    
+    
+    //広告表示のためのview
+    @IBOutlet weak var bannerView: GADBannerView!
+    
+    let request = GADRequest()
     
     //SecondViewControllerの戻った時の処理
     @IBAction func back(segue:UIStoryboardSegue){//戻るボタン用
@@ -49,6 +56,11 @@ class ViewController: UIViewController {
         animateImage(target: imageview)
         animateImage(target: imageview2)
         
+        request.testDevices = [kGADSimulatorID]
+        bannerView.delegate = self
+        bannerView.adUnitID = "ca-app-pub-2908759432198947/9315278516"
+        bannerView.rootViewController = self
+        bannerView.load(request)
     }
 
     override func didReceiveMemoryWarning() {
@@ -126,6 +138,7 @@ class ViewController: UIViewController {
     
     
     //スクールバス四条畷
+    // MARK: 現在時刻から一番近い値を算出する関数
     func result1() -> String {
         
         let timeFormatter = DateFormatter()
@@ -249,7 +262,7 @@ class ViewController: UIViewController {
         }
     }
     
-    
+    //MARK: タクシーイメージと画像を動かす処理
     @IBOutlet weak var imageview: UIImageView!
     
     @IBOutlet weak var imageview2: UIImageView!
@@ -269,17 +282,6 @@ class ViewController: UIViewController {
             // 再度アニメーションを起動
             self.animateImage(target: target)
         })
-    }
-    
-
-    
-    //チャット画面へ遷移
-    //次のアップデート用
-    //乗り合いタクシー募集チャット
-    @IBAction func chatButton(_ sender: Any) {
-        
-        performSegue(withIdentifier: "chat", sender: nil)
-        
     }
 }
 
