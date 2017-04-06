@@ -7,18 +7,23 @@
 //
 
 import UIKit
-
-class SecondViewController: UIViewController {
-
+import GoogleMobileAds
+class SecondViewController: UIViewController, GADBannerViewDelegate {
+    
+    //広告をつけるためのview
+    @IBOutlet weak var bannerView3: GADBannerView!
+    
+    let request = GADRequest()
+    
     var jikoku:String = ""
+    
     //tableview用の空の配列を定義
     var jikokuArray:[String] = []
+    
     //番号によって変わるため番号も受け取る
     var number:Int = Int()
     
     var alert:UIAlertController!
-    
-    
     
     var dateFormatter: DateFormatter{
         let formatter = DateFormatter()
@@ -57,9 +62,12 @@ class SecondViewController: UIViewController {
         
         BusJikoku.text = jikoku
         
-        
+        request.testDevices = [kGADSimulatorID]
+        bannerView3.delegate = self
+        bannerView3.adUnitID = "ca-app-pub-2908759432198947/9315278516"
+        bannerView3.rootViewController = self
+        bannerView3.load(request)
 
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -100,9 +108,7 @@ class SecondViewController: UIViewController {
                 jvc.Allarray = jikokuArray
             } else if 5 == number {
                 jvc.Allarray = jikokuArray
-            }  else if 6 == number {
-                jvc.Allarray = jikokuArray
-            }
+            } 
             //jvc.jikoku = ukewatasu //jikokuViewcontrollerの中のstring変数に渡す
         }
     }

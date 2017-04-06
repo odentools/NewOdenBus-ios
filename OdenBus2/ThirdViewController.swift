@@ -7,20 +7,36 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
-class ThirdViewController: UIViewController {
+class ThirdViewController: UIViewController, GADBannerViewDelegate {
+    
+    //広告表示のためのview
+    @IBOutlet weak var bannerView2: GADBannerView!
+    
+    let request = GADRequest()
+    
     
     var ukewatasu2:String = ""
     @IBAction func back3(segue:UIStoryboardSegue){//戻るボタン用
         animateImage(target: imageview3)
         animateImage(target: imageview4)
     }
+    
+    //全時刻を渡すための空配列
+    var jikokuUkewatasu2:[String] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         animateImage(target: imageview3)
         animateImage(target: imageview4)
+        
+        request.testDevices = [kGADSimulatorID]
+        bannerView2.delegate = self
+        bannerView2.adUnitID = "ca-app-pub-2908759432198947/9315278516"
+        bannerView2.rootViewController = self
+        bannerView2.load(request)
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,21 +52,33 @@ class ThirdViewController: UIViewController {
             if ukewatasu2 == resultHoliday1() {
                 ukewatasu2 = resultHoliday1()
                 jvc.jikoku2 = ukewatasu2
+                jvc.jikokuArray2 = jikokuUkewatasu2
+                jvc.number2 = 0
             } else if ukewatasu2 == resultHoliday2() {
                 ukewatasu2 = resultHoliday2()
                 jvc.jikoku2 = ukewatasu2
+                jvc.jikokuArray2 = jikokuUkewatasu2
+                jvc.number2 = 1
             } else if ukewatasu2 == resultHoliday3() {
                 ukewatasu2 = resultHoliday3()
                 jvc.jikoku2 = ukewatasu2
+                jvc.jikokuArray2 = jikokuUkewatasu2
+                jvc.number2 = 2
             } else if ukewatasu2 == resultHoliday4() {
                 ukewatasu2 = resultHoliday4()
                 jvc.jikoku2 = ukewatasu2
+                jvc.jikokuArray2 = jikokuUkewatasu2
+                jvc.number2 = 3
             } else if ukewatasu2 == resultHoliday5() {
                 ukewatasu2 = resultHoliday5()
                 jvc.jikoku2 = ukewatasu2
+                jvc.jikokuArray2 = jikokuUkewatasu2
+                jvc.number2 = 4
             } else if ukewatasu2 == resultHoliday6() {
                 ukewatasu2 = resultHoliday6()
                 jvc.jikoku2 = ukewatasu2
+                jvc.jikokuArray2 = jikokuUkewatasu2
+                jvc.number2 = 5
             }
             //jvc.jikoku = ukewatasu //jikokuViewcontrollerの中のstring変数に渡す
         }
@@ -58,26 +86,38 @@ class ThirdViewController: UIViewController {
     
     @IBAction func HolidaySbSijyou(_ sender: Any) {
         ukewatasu2 = resultHoliday1()
+        
+        jikokuUkewatasu2 = ["AM:8:30:00","AM:9:05:00","AM:9:40:00","AM:10:35:00","AM:11:35:00","PM:12:35:00","PM:13:35:00","PM:14:35:00","PM:15:35:00","PM:16:35:00","PM:17:35:00","PM:18:35:00","PM:19:35:00","PM:20:35:00"]
+        
     }
 
     @IBAction func HolidaySbNeyagawa(_ sender: Any) {
         ukewatasu2 = resultHoliday2()
+        
+        jikokuUkewatasu2 = ["AM:10:05:00","AM:11:05:00","PM:12:05:00","PM:13:05:00","PM:14:05:00","PM:15:05:00","PM:16:05:00","PM:17:10:00","PM:18:05:00","PM:19:05:00","PM:20:05:00","PM:21:05:00"]
     }
     
     @IBAction func HolidayKintetuSijyouDentu(_ sender: Any) {
         ukewatasu2 = resultHoliday3()
+        
+        jikokuUkewatasu2 = ["AM:8:00:00","AM:8:38:00","AM:9:01:00","AM:9:31:00","AM:9:48:00","AM:10:13:00","AM:10:38:00","AM:10:50:00","AM:11:28:00","AM:11:45:00","PM:12:10:00","PM:12:55:00","PM:13:11:00","PM:13:45:00","PM:14:10:00","PM:14:40:00","PM:15:10:00","PM:15:44:00","PM:15:55:00","PM:16:10:00","PM:16:39:00","PM:17:09:00","PM:17:24:00","PM:18:28:00"]
     }
     
     @IBAction func HolidayKintetuSijyou(_ sender: Any) {
         ukewatasu2 = resultHoliday4()
+        
+        jikokuUkewatasu2 = ["AM:8:22:00","AM:9:11:00","AM:9:47:00","AM:10:18:00","AM:10:32:00","AM:11:10:00","AM:11:50:00","PM:12:33:00","PM:12:53:00","PM:13:15:00","PM:13:27:00","PM:13:48:00","PM:14:06:00","PM:14:48:00","PM:15:15:00","PM:15:33:00","PM:15:51:00","PM:16:18:00","PM:16:34:00","PM:17:03:00","PM:17:34:00","PM:17:44:00","PM:18:52:00"]
     }
     
     @IBAction func HolidayKintetuKiyotaki(_ sender: Any) {
         ukewatasu2 = resultHoliday5()
+        jikokuUkewatasu2 = ["AM:6:58:00","AM:7:29:00","AM:7:43:00","AM:8:25:00","PM:17:55:00","PM:18:13:00","PM:18:54:00","PM:19:10:00","PM:19:55:00","PM:20:25:00","PM:20:55:00","PM:21:30:00"]
     }
     
     @IBAction func HolidayKintetuKiyotakiHatu(_ sender: Any) {
         ukewatasu2 = resultHoliday6()
+        
+        jikokuUkewatasu2 = ["AM:6:38:00","AM:7:25:00","AM:7:44:00","AM:8:08:00","AM:8:24:00","AM:8:40:00","AM:9:13:00","AM:9:49:00","AM:10:20:00","AM:10:34:00","AM:11:12:00","AM:11:52:00","PM:12:35:00","PM:12:55:00","PM:13:17:00","PM:13:29:00","PM:13:50:00","PM:14:08:00","PM:14:50:00","PM:15:17:00","PM:15:35:00","PM:15:53:00","PM:16:20:00","PM:16:36:00","PM:17:05:00","PM:17:36:00","PM:17:46:00","PM:18:11:00","PM:18:54:00","PM:19:40:00","PM:20:10:00","PM:20:40:00","PM:21:14:00"]
     }
     
     //スクールバス四條畷行き

@@ -7,8 +7,19 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
-class FourthViewController: UIViewController {
+class FourthViewController: UIViewController, GADBannerViewDelegate {
+    
+    //SecondTableView用空配列
+    var jikokuArray2:[String] = []
+    
+    var number2:Int = Int()
+    
+    //広告を表示させるためにview
+    @IBOutlet weak var bannerView4: GADBannerView!
+    
+    let request = GADRequest()
     
     var jikoku2:String = ""
     var alert:UIAlertController!
@@ -49,6 +60,11 @@ class FourthViewController: UIViewController {
         
         BusJikokuLabel2.text = jikoku2
         
+        request.testDevices = [kGADSimulatorID]
+        bannerView4.delegate = self
+        bannerView4.adUnitID = "ca-app-pub-2908759432198947/9315278516"
+        bannerView4.rootViewController = self
+        bannerView4.load(request)
 
     }
 
@@ -72,4 +88,29 @@ class FourthViewController: UIViewController {
        // UIApplication.shared.openURL(NSURL(string: "tel://0728790304")! as URL)
         self.present(alert, animated: true, completion:nil)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "zen2") {
+            let jvc: SecondTableViewController = (segue.destination as? SecondTableViewController)!
+            if 0 == number2 {
+                jvc.Allarray2 = jikokuArray2
+            } else if 1 == number2 {
+                jvc.Allarray2 = jikokuArray2
+            } else if 2 == number2 {
+                jvc.Allarray2 = jikokuArray2
+            } else if 3 == number2 {
+                jvc.Allarray2 = jikokuArray2
+            } else if 4 == number2 {
+                jvc.Allarray2 = jikokuArray2
+            } else if  5 == number2 {
+                jvc.Allarray2 = jikokuArray2
+            }
+        }
+    }
+    
+    
+    @IBAction func zenJikoku2(_ sender: Any) {
+        
+    }
+    
 }

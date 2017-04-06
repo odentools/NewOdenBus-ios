@@ -48,6 +48,7 @@
 		50F1D9401E90BB960015A2BC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50F1D93F1E90BB960015A2BC /* SystemConfiguration.framework */; };
 		50F1D9421E90BBC40015A2BC /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50F1D9411E90BBC40015A2BC /* GoogleMobileAds.framework */; };
 		50F1D9441E90BE870015A2BC /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50F1D9431E90BE870015A2BC /* GoogleMobileAds.framework */; };
+		50F1D9461E91D3A50015A2BC /* SecondTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F1D9451E91D3A50015A2BC /* SecondTableViewController.swift */; };
 		FE5295BD766E72E0BC2C0DB0 /* Pods_OdenBus2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEE4B23731A103986F40E536 /* Pods_OdenBus2.framework */; };
 /* End PBXBuildFile section */
 
@@ -96,6 +97,7 @@
 		50F1D93F1E90BB960015A2BC /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		50F1D9411E90BBC40015A2BC /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileAds.framework; path = "../../../Downloads/GoogleMobileAdsSdkiOS-7.19.0/GoogleMobileAds.framework"; sourceTree = "<group>"; };
 		50F1D9431E90BE870015A2BC /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
+		50F1D9451E91D3A50015A2BC /* SecondTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondTableViewController.swift; sourceTree = "<group>"; };
 		BEE4B23731A103986F40E536 /* Pods_OdenBus2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OdenBus2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C61FD2E492958FA4796A8E29 /* Pods-OdenBus2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OdenBus2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OdenBus2/Pods-OdenBus2.debug.xcconfig"; sourceTree = "<group>"; };
 		EBFD6AC96F93C2F76B0F830F /* Pods-OdenBus2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OdenBus2.release.xcconfig"; path = "Pods/Target Support Files/Pods-OdenBus2/Pods-OdenBus2.release.xcconfig"; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 				50BD0DAD1E422E5700BC7527 /* ThirdViewController.swift */,
 				50BD0DAF1E42336200BC7527 /* FourthViewController.swift */,
 				50EFCFF11E89337300045791 /* TableViewController.swift */,
+				50F1D9451E91D3A50015A2BC /* SecondTableViewController.swift */,
 				509731611E3F094F005795BF /* Assets.xcassets */,
 				509731631E3F094F005795BF /* LaunchScreen.storyboard */,
 				50F1D9431E90BE870015A2BC /* GoogleMobileAds.framework */,
@@ -363,6 +366,7 @@
 				5097315D1E3F094F005795BF /* ViewController.swift in Sources */,
 				50BD0DAE1E422E5700BC7527 /* ThirdViewController.swift in Sources */,
 				5097315B1E3F094F005795BF /* AppDelegate.swift in Sources */,
+				50F1D9461E91D3A50015A2BC /* SecondTableViewController.swift in Sources */,
 				50BD0DB01E42336200BC7527 /* FourthViewController.swift in Sources */,
 				50EFCFF41E8A6D2C00045791 /* CustomClass.swift in Sources */,
 			);
