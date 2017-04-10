@@ -103,25 +103,30 @@ class ViewController: UIViewController, GADBannerViewDelegate {
                 jvc.jikoku = ukewatasu
                 jvc.jikokuArray = jikokuUkewatasu
                 jvc.number = 5
+            } else if ukewatasu == result7() {
+                ukewatasu = result7()
+                jvc.jikoku = ukewatasu
+                jvc.jikokuArray = jikokuUkewatasu
+                jvc.number = 6
             }
             //jvc.jikoku = ukewatasu //jikokuViewcontrollerの中のstring変数に渡す
         }
     }
-
+    //京阪バス　四條畷-寝屋川キャンパス
     @IBAction func SbSIjyou(_ sender: Any) {
         ukewatasu = result1()
         //全時刻Table用
-        jikokuUkewatasu = ["AM:9:10:00","AM:9:50:00","AM:10:10:00","AM:10:50:00","AM:11:10:00","AM:11:30:00","AM:11:50:00","PM:12:10:00","PM:12:50:00","PM:13:10:00","PM:14:10:00","PM:15:10:00","PM:15:20:00","PM:15:50:00","PM:16:05:00","PM:16:42:00","PM:16:50:00","PM:16:55:00","PM:17:00:00","PM:17:05:00","PM:17:50:00","PM:18:05:00","PM:18:35:00","PM:18:50:00","PM:19:05:00","PM:19:35:00","PM:19:50:00","PM:20:05:00","PM:20:35:00","PM:21:05:00"]
+        jikokuUkewatasu = ["AM:8:24:00","AM:8:42:00","AM:8:54:00","AM:8:59:00","AM:9:07:00","AM:9:37:00","AM:10:07:00","AM:10:37:00","AM:11:07:00","AM:11:37:00","PM:12:07:00","PM:12:37:00","PM:13:07:00","PM:13:37:00","PM:14:07:00","PM:14:37:00","PM:15:07:00","PM:15:37:00","PM:16:07:00","PM:16:37:00","PM:17:07:00","PM:17:37:00","PM:18:07:00","PM:18:37:00","PM:19:07:00","PM:19:37:00","PM:20:07:00","PM:20:37:00"]
     
     }
-
+    //四條畷C-寝屋川市駅行き
     @IBAction func SbNeyagawa(_ sender: Any) {
         
         ukewatasu = result2()
         //全時刻のTable用
-        jikokuUkewatasu = ["AM:8:30:00","AM:8:40:00","AM:9:00:00","AM:9:05:00","AM:9:40:00","AM:10:20:00","AM:10:40:00","AM:11:20:00","AM:11:40:00","AM:12:20:00","AM:12:40:00","AM:13:00:00","AM:13:20:00","AM:13:40:00","AM:14:20:00","AM:14:40:00","AM:15:20:00","AM:15:40:00","AM:16:20:00","AM:16:40:00","AM:17:20:00","AM:17:40:00","AM:18:20:00","AM:18:40:00","AM:19:05:00","AM:19:40:00","AM:20:05:00","AM:20:40:00"]
+        jikokuUkewatasu = ["AM:9:47:00","AM:10:17:00","AM:10:47:00","AM:11:17:00","AM:11:47:00","PM:12:17:00","PM:12:47:00","PM:13:17:00","PM:13:47:00","PM:14:17:00","PM:14:47:00","PM:15:17:00","PM:15:47:00","PM:16:17:00","PM:16:47:00","PM:17:17:00","PM:17:47:00","PM:18:17:00","PM:18:47:00","PM:19:17:00","PM:19:47:00","PM:20:19:00","PM:20:49:00","PM:21:19:00"]
     }
-    
+    //1限にギリギリ間に合うものを色付け
     @IBAction func KintetuDentu(_ sender: Any) {
         ukewatasu = result3()
         //全時刻のTable用
@@ -144,7 +149,13 @@ class ViewController: UIViewController, GADBannerViewDelegate {
     }
     
     
-    //スクールバス四条畷
+    @IBAction func NeyagawaSieki(_ sender: Any) {
+        ukewatasu = result7()
+           jikokuUkewatasu = ["AM:8:37:00","AM:9:02:00","AM:9:32:00","AM:10:02:00","AM:10:32:00","AM:11:02:00","AM:11:32:00","PM:12:02:00","PM:12:32:00","PM:13:02:00","PM:13:32:00","PM:14:02:00","PM:14:32:00","PM:15:02:00","PM:15:32:00","PM:16:02:00","PM:16:32:00","PM:17:02:00","PM:17:32:00","PM:18:02:00","PM:18:32:00","PM:19:02:00","PM:19:32:00","PM:20:02:00","PM:20:32:00"]
+    }
+    
+    
+    //京阪バス 寝屋川Cー四条C
     // MARK: 現在時刻から一番近い値を算出する関数
     func result1() -> String {
         
@@ -153,7 +164,7 @@ class ViewController: UIViewController, GADBannerViewDelegate {
         let nowString = timeFormatter.string(from: NSDate() as Date)
         let nowTime = timeFormatter.date(from: nowString)!
         
-        let jikokuArray: [(String, String)] = [("Next Bus  AM","9:10:00"),("Next Bus  AM","9:50:00"),("Next Bus  AM","10:10:00"),("Next Bus  AM","10:50:00"),("Next Bus  AM","11:10:00"),("Next Bus  AM","11:30:00"),("Next Bus  AM","11:50:00"),("Next Bus  PM","12:10:00"),("Next Bus  PM","12:50:00"),("Next Bus  PM","13:10:00"),("Next Bus  PM","14:10:00"),("Next Bus  PM","15:10:00"),("Next Bus  PM","15:20:00"),("Next Bus  PM","15:50:00"),("Next Bus  PM","16:05:00"),("Next Bus  PM","16:42:00"),("Next Bus  PM","16:50:00"),("Next Bus  PM","16:55:00"),("Next Bus  PM","17:00:00"),("Next Bus  PM","17:05:00"),("Next Bus  PM","17:50:00"),("Next Bus  PM","18:05:00"),("Next Bus  PM","18:35:00"),("Next Bus  PM","18:50:00"),("Next Bus  PM","19:05:00"),("Next Bus  PM","19:35:00"),("Next Bus  PM","19:50:00"),("Next Bus  PM","20:05:00"),("Next Bus  PM","20:35:00"),("Next Bus  PM","21:05:00")]
+        let jikokuArray: [(String, String)] = [("Next Bus  AM","8:24:00"),("Next Bus  AM","8:42:00"),("Next Bus  AM","8:54:00"),("Next Bus  AM","8:59:00"),("Next Bus  AM","9:07:00"),("Next Bus  AM","9:37:00"),("Next Bus  AM","10:07:00"),("Next Bus  AM","10:37:00"),("Next Bus  AM","10:44:00"),("Next Bus  AM","11:07:00"),("Next Bus  AM","11:37:00"),("Next Bus  PM","12:07:00"),("Next Bus  PM","12:37:00"),("Next Bus  PM","13:07:00"),("Next Bus  PM","13:37:00"),("Next Bus  PM","14:07:00"),("Next Bus  PM","14:37:00"),("Next Bus  PM","15:07:00"),("Next Bus  PM","15:37:00"),("Next Bus  PM","16:07:00"),("Next Bus  PM","16:37:00"),("Next Bus  PM","17:07:00"),("Next Bus  PM","17:37:00"),("Next Bus  PM","18:07:00"),("Next Bus  PM","18:37:00"),("Next Bus  PM","19:07:00"),("Next Bus  PM","19:37:00"),("Next Bus  PM","20:07:00"),("Next Bus  PM","20:37:00")]
         
         let resultArray: [(String, String)] = jikokuArray.flatMap({
             let diff = timeFormatter.date(from: $0.1)
@@ -166,14 +177,14 @@ class ViewController: UIViewController, GADBannerViewDelegate {
             return "本日のダイヤは終了しました。"
         }
     }
-    //スクールバス寝屋川
+    //四條畷ー寝屋川市駅行き
     func result2() -> String {
         
         let timeFormatter = DateFormatter()
         timeFormatter.dateFormat = "HH:mm:ss"
         let nowString = timeFormatter.string(from: NSDate() as Date)
         let nowTime = timeFormatter.date(from: nowString)!
-        let jikokuArray: [(String, String)] = [("Next Bus  AM","8:30:00"),("Next Bus  AM","8:40:00"),("Next Bus  AM","9:00:00"),("Next Bus  AM","9:05:00"),("Next Bus  AM","9:40:00"),("Next Bus  AM","10:20:00"),("Next Bus  AM","10:40:00"),("Next Bus  PM","11:20:00"),("Next Bus  PM","11:40:00"),("Next Bus  PM","12:20:00"),("Next Bus  PM","12:40:00"),("Next Bus  PM","13:00:00"),("Next Bus  PM","13:20:00"),("Next Bus  PM","13:40:00"),("Next Bus  PM","14:20:00"),("Next Bus  PM","14:40:00"),("Next Bus  PM","15:20:00"),("Next Bus  PM","15:40:00"),("Next Bus  PM","16:20:00"),("Next Bus  PM","16:40:00"),("Next Bus  PM","17:20:00"),("Next Bus  PM","17:40:00"),("Next Bus  PM","18:20:00"),("Next Bus  PM","18:40:00"),("Next Bus  PM","19:05:00"),("Next Bus  PM","19:40:00"),("Next Bus  PM","20:05:00"),("Next Bus  PM","20:40:00")]
+        let jikokuArray: [(String, String)] = [("Next Bus  AM","9:47:00"),("Next Bus  AM","10:17:00"),("Next Bus  AM","10:47:00"),("Next Bus  AM","11:17:00"),("Next Bus  AM","11:47:00"),("Next Bus  PM","12:17:00"),("Next Bus  PM","12:47:00"),("Next Bus  PM","13:17:00"),("Next Bus  PM","13:47:00"),("Next Bus  PM","14:17:00"),("Next Bus  PM","14:47:00"),("Next Bus  PM","15:17:00"),("Next Bus  PM","15:47:00"),("Next Bus  PM","16:17:00"),("Next Bus  PM","16:47:00"),("Next Bus  PM","16:52:00"),("Next Bus  PM","17:17:00"),("Next Bus  PM","17:47:00"),("Next Bus  PM","18:27:00"),("Next Bus  PM","18:47:00"),("Next Bus  PM","19:17:00"),("Next Bus  PM","19:47:00"),("Next Bus  PM","20:19:00"),("Next Bus  PM","20:49:00"),("Next Bus  PM","21:19:00")]
         
         
         let resultArray: [(String, String)] = jikokuArray.flatMap({
@@ -268,6 +279,30 @@ class ViewController: UIViewController, GADBannerViewDelegate {
             return "本日のダイヤは終了しました。"
         }
     }
+    
+    //寝屋川市駅発
+    func result7() -> String {
+        
+        let timeFormatter = DateFormatter()
+        timeFormatter.dateFormat = "HH:mm:ss"
+        let nowString = timeFormatter.string(from: NSDate() as Date)
+        let nowTime = timeFormatter.date(from: nowString)!
+        let jikokuArray: [(String, String)] = [("Next Bus  AM","8:37:00"),("Next Bus  AM","9:02:00"),("Next Bus  AM","9:32:00"),("Next Bus  AM","10:02:00"),("Next Bus  AM","10:32:00"),("Next Bus  AM","11:02:00"),("Next Bus  AM","11:32:00"),("Next Bus  PM","12:02:00"),("Next Bus  PM","12:32:00"),("Next Bus  PM","13:02:00"),("Next Bus  PM","13:32:00"),("Next Bus  PM","14:02:00"),("Next Bus  PM","14:32:00"),("Next Bus  PM","15:02:00"),("Next Bus  PM","15:32:00"),("Next Bus  PM","16:02:00"),("Next Bus  PM","16:32:00"),("Next Bus  PM","17:02:00"),("Next Bus  PM","17:32:00"),("Next Bus  PM","18:02:00"),("Next Bus  PM","19:02:00"),("Next Bus  PM","19:32:00"),("Next Bus  PM","20:02:00"),("Next Bus  PM","20:32:00")]
+        
+        
+        let resultArray: [(String, String)] = jikokuArray.flatMap({
+            let diff = timeFormatter.date(from: $0.1)
+            return nowTime.timeIntervalSince(diff ?? nowTime) > 0 ? nil : $0
+        })
+        
+        if resultArray.count > 0, let result = resultArray.first {
+            return "\(result.0):\(result.1)"
+        } else {
+            return "本日のダイヤは終了しました。"
+        }
+    }
+    
+    
     
     //MARK: タクシーイメージと画像を動かす処理
     @IBOutlet weak var imageview: UIImageView!

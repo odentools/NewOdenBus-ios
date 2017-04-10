@@ -102,8 +102,10 @@ class FourthViewController: UIViewController, GADBannerViewDelegate {
                 jvc.Allarray2 = jikokuArray2
             } else if 4 == number2 {
                 jvc.Allarray2 = jikokuArray2
-            } else if  5 == number2 {
+            } else if 5 == number2 {
                 jvc.Allarray2 = jikokuArray2
+            } else if 8 == number2 {
+                jvc.Allarray2 = jikokuArray2                
             }
         }
     }

@@ -108,7 +108,9 @@ class SecondViewController: UIViewController, GADBannerViewDelegate {
                 jvc.Allarray = jikokuArray
             } else if 5 == number {
                 jvc.Allarray = jikokuArray
-            } 
+            } else if 6 == number {
+                jvc.Allarray = jikokuArray
+            }
             //jvc.jikoku = ukewatasu //jikokuViewcontrollerの中のstring変数に渡す
         }
     }

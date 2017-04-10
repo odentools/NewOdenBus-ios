@@ -79,6 +79,10 @@ class ThirdViewController: UIViewController, GADBannerViewDelegate {
                 jvc.jikoku2 = ukewatasu2
                 jvc.jikokuArray2 = jikokuUkewatasu2
                 jvc.number2 = 5
+            } else if ukewatasu2 == resultHoliday7() {
+                jvc.jikoku2 = ukewatasu2
+                jvc.jikokuArray2 = jikokuUkewatasu2
+                jvc.number2 = 8
             }
             //jvc.jikoku = ukewatasu //jikokuViewcontrollerの中のstring変数に渡す
         }
@@ -87,14 +91,14 @@ class ThirdViewController: UIViewController, GADBannerViewDelegate {
     @IBAction func HolidaySbSijyou(_ sender: Any) {
         ukewatasu2 = resultHoliday1()
         
-        jikokuUkewatasu2 = ["AM:8:30:00","AM:9:05:00","AM:9:40:00","AM:10:35:00","AM:11:35:00","PM:12:35:00","PM:13:35:00","PM:14:35:00","PM:15:35:00","PM:16:35:00","PM:17:35:00","PM:18:35:00","PM:19:35:00","PM:20:35:00"]
+        jikokuUkewatasu2 = ["AM:8:24:00","AM:8:39:00","AM:9:07:00","AM:9:37:00","AM:10:07:00","AM:10:37:00","AM:11:07:00","PM:11:37:00","PM:12:07:00","PM:12:37:00","PM:13:07:00","PM:13:37:00","PM:14:07:00","PM:14:37:00","AM:15:07:00","AM:15:37:00","AM:16:07:00","AM:16:37:00","PM:17:07:00","PM:17:37:00","PM:18:07:00","PM:18:37:00","PM:19:07:00","PM:19:37:00"]
         
     }
 
     @IBAction func HolidaySbNeyagawa(_ sender: Any) {
         ukewatasu2 = resultHoliday2()
         
-        jikokuUkewatasu2 = ["AM:10:05:00","AM:11:05:00","PM:12:05:00","PM:13:05:00","PM:14:05:00","PM:15:05:00","PM:16:05:00","PM:17:10:00","PM:18:05:00","PM:19:05:00","PM:20:05:00","PM:21:05:00"]
+        jikokuUkewatasu2 = ["AM:9:17:00","AM:9:47:00","AM:10:17:00","AM:10:47:00","AM:11:17:00","AM:11:47:00","PM:12:17:00","PM:12:47:00","PM:13:17:00","PM:13:47:00","PM:14:17:00","PM:14:47:00","PM:15:17:00","PM:15:47:00","PM:16:17:00","PM:16:47:00","PM:17:17:00","PM:17:47:00","PM:18:17:00","PM:18:47:00","PM:19:17:00","PM:19:47:00","PM:20:19:00"]
     }
     
     @IBAction func HolidayKintetuSijyouDentu(_ sender: Any) {
@@ -120,7 +124,13 @@ class ThirdViewController: UIViewController, GADBannerViewDelegate {
         jikokuUkewatasu2 = ["AM:6:38:00","AM:7:25:00","AM:7:44:00","AM:8:08:00","AM:8:24:00","AM:8:40:00","AM:9:13:00","AM:9:49:00","AM:10:20:00","AM:10:34:00","AM:11:12:00","AM:11:52:00","PM:12:35:00","PM:12:55:00","PM:13:17:00","PM:13:29:00","PM:13:50:00","PM:14:08:00","PM:14:50:00","PM:15:17:00","PM:15:35:00","PM:15:53:00","PM:16:20:00","PM:16:36:00","PM:17:05:00","PM:17:36:00","PM:17:46:00","PM:18:11:00","PM:18:54:00","PM:19:40:00","PM:20:10:00","PM:20:40:00","PM:21:14:00"]
     }
     
-    //スクールバス四條畷行き
+    @IBAction func Holiday2(_ sender: Any) {
+        ukewatasu2 = resultHoliday7()
+        
+        jikokuUkewatasu2 = ["AM:8:34:00","AM:9:02:00","AM:9:32:00","AM:10:02:00","AM:10:32:00","AM:11:02:00","AM:11:32:00","PM:12:02:00","PM:12:32:00","PM:13:02:00","PM:13:32:00","PM:14:02:00","PM:14:32:00","PM:15:02:00","PM:15:32:00","PM:16:02:00","PM:16:32:00","PM:17:02:00","PM:17:32:00","PM:18:02:00","PM:18:32:00","PM:19:02:00","PM:19:32:00"]
+    }
+    
+    //寝屋川C-四條畷C
     func resultHoliday1() -> String {
         
         let timeFormatter = DateFormatter()
@@ -128,7 +138,7 @@ class ThirdViewController: UIViewController, GADBannerViewDelegate {
         let nowString = timeFormatter.string(from: NSDate() as Date)
         let nowTime = timeFormatter.date(from: nowString)!
         
-        let jikokuArray: [(String, String)] = [("Next Bus  AM","8:30:00"),("Next Bus  AM","9:05:00"),("Next Bus  AM","9:40:00"),("Next Bus AM","10:35:00"),("Next Bus  AM","11:35:00"),("Next Bus  PM","12:35:00"),("Next Bus  PM","13:35:00"),("Next Bus  PM","14:35:00"),("Next Bus  PM","15:35:00"),("Next Bus  PM","16:35:00"),("Next Bus  PM","17:35:00"),("Next Bus  PM","18:35:00"),("Next Bus  PM","19:35:00"),("Next Bus  PM","20:35:00")]
+        let jikokuArray: [(String, String)] = [("Next Bus  AM","8:24:00"),("Next Bus  AM","8:39:00"),("Next Bus  AM","9:07:00"),("Next Bus AM","9:37:00"),("Next Bus  AM","10:07:00"),("Next Bus  AM","10:37:00"),("Next Bus  AM","11:07:00"),("Next Bus  AM","11:37:00"),("Next Bus  PM","12:07:00"),("Next Bus  PM","12:47:00"),("Next Bus  PM","13:07:00"),("Next Bus  PM","13:37:00"),("Next Bus  PM","14:07:00"),("Next Bus  PM","14:37:00"),("Next Bus  PM","15:07:00"),("Next Bus  PM","15:37:00"),("Next Bus PM","16:07:00"),("Next Bus  PM","16:37:00"),("Next Bus  PM","17:07:00"),("Next Bus  PM","17:37:00"),("Next Bus  PM","18:07:00"),("Next Bus PM","18:37:00"),("Next Bus  PM","19:07:00"),("Next Bus  PM","19:37:00")]
         
         let resultArray: [(String, String)] = jikokuArray.flatMap({
             let diff = timeFormatter.date(from: $0.1)
@@ -142,7 +152,7 @@ class ThirdViewController: UIViewController, GADBannerViewDelegate {
         }
     }
     
-    //スクールバス寝屋川行き
+    //四條畷-寝屋川市駅行き
     func resultHoliday2() -> String {
         
         let timeFormatter = DateFormatter()
@@ -150,7 +160,7 @@ class ThirdViewController: UIViewController, GADBannerViewDelegate {
         let nowString = timeFormatter.string(from: NSDate() as Date)
         let nowTime = timeFormatter.date(from: nowString)!
         
-        let jikokuArray: [(String, String)] = [("Next Bus  AM","10:05:00"),("Next Bus  AM","11:05:00"),("Next Bus  PM","12:05:00"),("Next Bus  PM","13:05:00"),("Next Bus  PM","14:05:00"),("Next Bus  PM","15:05:00"),("Next Bus  PM","16:05:00"),("Next Bus  PM","17:10:00"),("Next Bus  PM","18:05:00"),("Next Bus  PM","19:05:00"),("Next Bus  PM","20:05:00"),("Next Bus  PM","21:05:00")]
+        let jikokuArray: [(String, String)] = [("Next Bus  AM","9:17:00"),("Next Bus  AM","9:47:00"),("Next Bus  AM","10:17:00"),("Next Bus  AM","10:47:00"),("Next Bus  AM","11:17:00"),("Next Bus  AM","11:47:00"),("Next Bus  PM","12:17:00"),("Next Bus  PM","12:47:00"),("Next Bus  PM","13:17:00"),("Next Bus  PM","13:47:00"),("Next Bus  PM","14:17:00"),("Next Bus  PM","14:47:00"),("Next Bus  PM","15:17:00"),("Next Bus  PM","15:47:00"),("Next Bus  PM","16:17:00"),("Next Bus  PM","16:47:00"),("Next Bus  PM","17:17:00"),("Next Bus  PM","17:47:00"),("Next Bus  PM","18:17:00"),("Next Bus  PM","18:47:00"),("Next Bus  PM","19:17:00"),("Next Bus  PM","19:47:00"),("Next Bus  PM","20:19:00")]
         
         let resultArray: [(String, String)] = jikokuArray.flatMap({
             let diff = timeFormatter.date(from: $0.1)
@@ -237,6 +247,28 @@ class ThirdViewController: UIViewController, GADBannerViewDelegate {
         let nowTime = timeFormatter.date(from: nowString)!
         
         let jikokuArray: [(String, String)] = [("Next Bus  AM","6:38:00"),("Next Bus  AM","7:25:00"),("Next Bus  AM","7:44:00"),("Next Bus  AM","8:08:00"),("Next Bus  AM","8:24:00"),("Next Bus  AM","8:40:00"),("Next Bus  AM","9:13:00"),("Next Bus  AM","9:49:00"),("Next Bus  AM","10:20:00"),("Next Bus  AM","10:34:00"),("Next Bus  AM","11:12:00"),("Next Bus  AM","11:52:00"),("Next Bus  PM","12:35:00"),("Next Bus  PM","12:55:00"),("Next Bus  PM","13:17:00"),("Next Bus  PM","13:29:00"),("Next Bus  PM","13:50:00"),("Next Bus  PM","14:08:00"),("Next Bus  PM","14:50:00"),("Next Bus PM","15:17:00"),("Next Bus  PM","15:35:00"),("Next Bus  PM","15:53:00"),("Next Bus  PM","16:20:00"),("Next Bus  PM","16:36:00"),("Next Bus  PM","17:05:00"),("Next Bus  PM","17:36:00"),("Next Bus  PM","17:46:00"),("Next Bus  PM","18:11:00"),("Next Bus  PM","18:54:00"),("Next Bus  PM","19:40:00"),("Next Bus  PM","20:10:00"),("Next Bus  PM","20:40:00"),("Next Bus  PM","21:14:00")]
+        
+        let resultArray: [(String, String)] = jikokuArray.flatMap({
+            let diff = timeFormatter.date(from: $0.1)
+            return nowTime.timeIntervalSince(diff ?? nowTime) > 0 ? nil : $0
+        })
+        
+        if resultArray.count > 0, let result = resultArray.first {
+            return "\(result.0):\(result.1)"
+        } else {
+            return "本日のダイヤは終了しました。"
+        }
+    }
+    
+    
+    func resultHoliday7() -> String {
+        
+        let timeFormatter = DateFormatter()
+        timeFormatter.dateFormat = "HH:mm:ss"
+        let nowString = timeFormatter.string(from: NSDate() as Date)
+        let nowTime = timeFormatter.date(from: nowString)!
+        
+        let jikokuArray: [(String, String)] = [("Next Bus  AM","8:34:00"),("Next Bus  AM","9:02:00"),("Next Bus  AM","9:32:00"),("Next Bus AM","10:02:00"),("Next Bus  AM","10:32:00"),("Next Bus  AM","11:02:00"),("Next Bus  AM","11:32:00"),("Next Bus  PM","12:02:00"),("Next Bus  PM","12:32:00"),("Next Bus  PM","13:02:00"),("Next Bus  PM","13:42:00"),("Next Bus  PM","14:02:00"),("Next Bus  PM","14:32:00"),("Next Bus  PM","15:02:00"),("Next Bus  PM","15:32:00"),("Next Bus  PM","16:02:00"),("Next Bus PM","16:32:00"),("Next Bus  PM","17:02:00"),("Next Bus  PM","17:32:00"),("Next Bus  PM","18:02:00"),("Next Bus  PM","18:32:00"),("Next Bus PM","19:02:00"),("Next Bus  PM","19:32:00")]
         
         let resultArray: [(String, String)] = jikokuArray.flatMap({
             let diff = timeFormatter.date(from: $0.1)
