@@ -31,6 +31,8 @@ class SecondTableViewController: UIViewController, UITabBarDelegate, UITableView
         let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "MyCell2", for: indexPath as IndexPath)
         
         cell.textLabel!.text = Allarray2[indexPath.row]
+        //セルのテキストのフォントサイズを変更
+        cell.textLabel?.font = UIFont.systemFont(ofSize: 20)
         
         return cell
     }

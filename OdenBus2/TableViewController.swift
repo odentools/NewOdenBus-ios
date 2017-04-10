@@ -41,6 +41,7 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
      cell.textLabel!.text = Allarray[indexPath.row]
      //セルの背景色を変更
      //cell.contentView.backgroundColor = UIColor.lightGray
+     cell.textLabel?.font = UIFont.systemFont(ofSize: 20)
        
      return cell
      }
